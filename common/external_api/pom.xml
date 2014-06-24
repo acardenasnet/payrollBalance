@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+    <parent>
+		<groupId>com.ips.payroll.balance</groupId>
+		<artifactId>baseline</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../../baselines/ips/pom.xml</relativePath>
+    </parent>
+  
+	<groupId>com.ips.payroll.balance.common</groupId>
+	<artifactId>external-api</artifactId>
+	<version>${ips.payroll.balance.common}</version>	
+	<packaging>jar</packaging>	
+    <name>Common External API (JAR)</name>
+	
+</project>

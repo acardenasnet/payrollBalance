@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>com.ips.payroll.balance.dd</groupId>
+    <artifactId>baseline</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../dd/pom.xml</relativePath>
+  </parent>
+
+  <groupId>com.ips.payroll.balance.jee</groupId>
+  <artifactId>baseline</artifactId>
+  <packaging>pom</packaging>
+  <name>JEE BASELINE (POM)</name>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+        <executions>
+          <execution>
+            <id>default</id>
+              <phase>compile</phase>
+              <configuration>
+                <source>1.7</source>
+                <target>1.7</target>
+              </configuration>
+            </execution>
+          </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <excludePomFiles>true</excludePomFiles>
+          <archive> 
+            <addMavenDescriptor>false</addMavenDescriptor>
+          </archive> 
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ear-plugin</artifactId>
+        <configuration>
+          <ejbVersion>3.1</ejbVersion>
+          <excludePomFiles>true</excludePomFiles>
+          <archive> 
+            <addMavenDescriptor>false</addMavenDescriptor>
+          </archive> 
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <dependencyManagement>
+      <dependencies>
+          <dependency>
+            <groupId>javaee</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>6</version>
+            <scope>provided</scope>
+          </dependency>
+      </dependencies>
+  </dependencyManagement>
+
+</project>
